@@ -1,11 +1,6 @@
-import IconLabel from '../../../commons/components/IconLabel'
-import { ratingConfig } from '../../../commons/config/ratingConfig'
-import {
-    LinearProgress,
-    linearProgressClasses,
-    Typography,
-    useTheme,
-} from '@mui/material'
+import IconLabel from '../../../../commons/components/IconLabel'
+import { ratingConfig } from '../../../../commons/config/ratingConfig'
+import { LinearProgress, linearProgressClasses, Typography, useTheme } from '@mui/material'
 
 const RatingProgress = (props: { value: number }) => {
     const config = ratingConfig.rating
@@ -14,12 +9,7 @@ const RatingProgress = (props: { value: number }) => {
 
     return (
         <>
-            <IconLabel
-                label={config.label}
-                icon={config.icon}
-                color={config.iconColor}
-                tip={config.description ?? ''}
-            />
+            <IconLabel label={config.label} icon={config.icon} color={config.iconColor} tip={config.description ?? ''} />
             <LinearProgress
                 variant="determinate"
                 value={props.value * 10}
@@ -29,10 +19,7 @@ const RatingProgress = (props: { value: number }) => {
                     height: 10,
                     borderRadius: 5,
                     [`&.${linearProgressClasses.colorPrimary}`]: {
-                        backgroundColor:
-                            theme.palette.grey[
-                                theme.palette.mode === 'light' ? 200 : 800
-                            ],
+                        backgroundColor: theme.palette.grey[theme.palette.mode === 'light' ? 200 : 800],
                     },
                     [`& .${linearProgressClasses.bar}`]: {
                         borderRadius: 5,

@@ -1,8 +1,8 @@
-import DefaultPaper from '../../commons/components/ui/DefaultPaper'
+import DefaultPaper from '../../../commons/components/ui/DefaultPaper'
 import { Stack, Typography } from '@mui/material'
 import ReportRating from './rating/ReportRating'
 import { useState } from 'react'
-import { Rating } from '../../commons/types/types'
+import { Rating } from '../../../commons/types/types'
 
 const NewReportPage = () => {
     const [rating, setRating] = useState<Rating>({
