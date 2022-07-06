@@ -1,52 +1,46 @@
 import DefaultPaper from '../../../commons/components/ui/DefaultPaper'
 import ValueEditor from './ValueEditor'
-import { Grid, Typography } from '@mui/material'
 import { Rating } from '../../../commons/types/types'
+import { Dispatch, SetStateAction } from 'react'
+import RatingProgress from './RatingProgress'
 
-const state: Rating = {
-    rating: 4,
-    focus: 3,
-    mood: 2,
-    satisfaction: 1,
-    achievement: 5,
-}
-
-const ReportRating = () => {
+const ReportRating = (props: {
+    rating: Rating
+    setRating: Dispatch<SetStateAction<Rating>>
+}) => {
+    const { rating, setRating } = props
     return (
         <DefaultPaper title={'Ratings'}>
-            <Grid container spacing={2}>
-                <Grid item xs={12} md={6}>
-                    <ValueEditor
-                        field={'mood'}
-                        state={state}
-                        setState={() => {}}
-                    />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <ValueEditor
-                        field={'satisfaction'}
-                        state={state}
-                        setState={() => {}}
-                    />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <ValueEditor
-                        field={'focus'}
-                        state={state}
-                        setState={() => {}}
-                    />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                    <ValueEditor
-                        field={'achievement'}
-                        state={state}
-                        setState={() => {}}
-                    />
-                </Grid>
-                <Grid item xs={12} display={'flex'} justifyContent={'right'}>
-                    <Typography>Result: 4.55</Typography>
-                </Grid>
-            </Grid>
+            <div
+                style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'auto 1fr auto',
+                    gap: '8px 20px',
+                }}
+            >
+                <ValueEditor
+                    field={'mood'}
+                    state={rating}
+                    setState={setRating}
+                />
+                <ValueEditor
+                    field={'achievement'}
+                    state={rating}
+                    setState={setRating}
+                />
+                <ValueEditor
+                    field={'focus'}
+                    state={rating}
+                    setState={setRating}
+                />
+                <ValueEditor
+                    field={'satisfaction'}
+                    state={rating}
+                    setState={setRating}
+                />
+                <div style={{ height: 8, gridColumn: '3' }} />
+                <RatingProgress value={rating.rating} />
+            </div>
         </DefaultPaper>
     )
 }

@@ -19,7 +19,7 @@ export const ratingConfig: RatingConfig = {
     rating: {
         label: 'Rating',
         icon: StarIcon,
-        iconColor: 'yellow',
+        iconColor: 'orange',
     },
     mood: {
         label: 'Mood',

@@ -1,11 +1,3 @@
-export type Entry = {
-    _id: string
-    ownerId: string
-    date: Date
-    parameters: Parameter[]
-    rating: Rating
-}
-
 type Parameter = {
     __typename: string
     value: number
@@ -17,4 +9,12 @@ export type Rating = {
     focus?: number
     satisfaction?: number
     rating: number
+}
+
+export type Entry = {
+    _id: string
+    ownerId: string
+    date: Date
+    parameters: Parameter[]
+    rating: Rating
 }
