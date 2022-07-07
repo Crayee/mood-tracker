@@ -1,5 +1,16 @@
 import { Intensity } from '../types/types'
 
-export const activities = ['Outdoor', 'Indoor'] as const
+export const sportCategories = ['Cardio', 'Weight lifting', 'Endurance'] as const
 
-export const allIntensities: Intensity[] = ['light', 'medium', 'heavy']
+export const foodTags = [
+    'Fast Food',
+    'Meat',
+    'Sweets',
+    'Vegan',
+    'Diary products',
+    'Corn',
+    'Fruit',
+    'Vegetables',
+] as const
+
+export const intensities: Intensity[] = ['light', 'medium', 'heavy']

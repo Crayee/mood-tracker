@@ -1,14 +1,30 @@
 export type Intensity = 'light' | 'medium' | 'heavy'
 
-type DurationIntensity = {
+export type DurationIntensity = {
     duration: number
-    intensity: Intensity
+    intensity?: Intensity
+}
+
+type Interaction = {
+    duration: number
+    who: string
 }
 
 type Hydration = {
     waterAmount: number
     softDrinkAmount: number
     alcoholAmount: number
+}
+
+type Food = {
+    tags: string[]
+    price: number
+}
+
+export type Activities = {
+    sport?: DurationIntensity
+    work?: DurationIntensity
+    interactions?: Interaction[]
 }
 
 export type Rating = {
@@ -19,18 +35,19 @@ export type Rating = {
     rating: number
 }
 
-export type Entry = {
+export type DailyReport = {
     _id: string
     ownerId: string
     date: Date
 
     parameters: {
-        sleep: number
+        sleep: DurationIntensity
         hydration: Hydration
-        work: DurationIntensity
-        sport: DurationIntensity
+        food: Food
+        activities: Activities
+        others: string[]
     }
     rating: Rating
 }
 
-export type NewEntry = Omit<Entry, '_id' | 'date' | 'ownerId'>
+export type NewDailyReport = Omit<DailyReport, '_id' | 'date' | 'ownerId'>

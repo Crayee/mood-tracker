@@ -1,8 +1,8 @@
-import DefaultPaper from '../../../commons/components/ui/DefaultPaper'
-import { Stack, Typography } from '@mui/material'
+import { Grid, Typography } from '@mui/material'
 import ReportRating from './rating/ReportRating'
 import { useState } from 'react'
 import { Rating } from '../../../commons/types/types'
+import ParametersPaper from './ParametersPaper'
 
 const NewReportPage = () => {
     const [rating, setRating] = useState<Rating>({
@@ -14,18 +14,17 @@ const NewReportPage = () => {
     })
 
     return (
-        <Stack spacing={'10px'} style={{ margin: '10px' }}>
-            <Typography fontSize={20}>New Report</Typography>
-            <DefaultPaper title={'Parameters'}>
-                <Typography>Sleep</Typography>
-                <Typography>Friends</Typography>
-                <Typography>Water</Typography>
-                <Typography>Food</Typography>
-                <Typography>Work</Typography>
-                <Typography>...</Typography>
-            </DefaultPaper>
-            <ReportRating rating={rating} setRating={setRating} />
-        </Stack>
+        <Grid container spacing={{ xs: 1, md: 1.5 }} sx={{ p: { xs: 1, md: 1.5 } }}>
+            <Grid item xs={12}>
+                <Typography fontSize={20}>New Daily Report</Typography>
+            </Grid>
+            <Grid item xs={12}>
+                <ParametersPaper />
+            </Grid>
+            <Grid item xs={12}>
+                <ReportRating rating={rating} setRating={setRating} />
+            </Grid>
+        </Grid>
     )
 }
 

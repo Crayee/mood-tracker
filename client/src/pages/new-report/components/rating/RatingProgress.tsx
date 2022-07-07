@@ -9,7 +9,7 @@ const RatingProgress = (props: { value: number }) => {
 
     return (
         <>
-            <IconLabel label={config.label} icon={config.icon} color={config.iconColor} tip={config.description ?? ''} />
+            <IconLabel label={config.label} icon={config.icon} color={config.color} tip={config.description ?? ''} />
             <LinearProgress
                 variant="determinate"
                 value={props.value * 10}

@@ -22,7 +22,7 @@ const ValueEditor = (props: { field: keyof Rating; state: Rating; setState: Disp
 
     return (
         <>
-            <IconLabel label={config.label} icon={config.icon} color={config.iconColor} tip={config.description ?? ''} />
+            <IconLabel label={config.label} icon={config.icon} color={config.color} tip={config.description ?? ''} />
             <ValueSlider value={value} setValue={handleChange} tips={config.tips} />
         </>
     )
