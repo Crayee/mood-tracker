@@ -9,7 +9,7 @@ import PsychologyIcon from '@mui/icons-material/Psychology'
 export type RatingFieldConfig = {
     label: string
     icon: typeof SvgIcon
-    iconColor?: string
+    color: string
     description?: string
     tips?: Record<number, string>
 }
@@ -19,12 +19,12 @@ export const ratingConfig: RatingConfig = {
     rating: {
         label: 'Rating',
         icon: StarIcon,
-        iconColor: 'yellow',
+        color: 'orange',
     },
     mood: {
         label: 'Mood',
         icon: MoodIcon,
-        iconColor: 'green',
+        color: 'green',
         description: 'How good your current mood is, at the end of the day',
         tips: {
             1: 'Terrible mood',
@@ -37,7 +37,7 @@ export const ratingConfig: RatingConfig = {
     achievement: {
         label: 'Achievement',
         icon: EmojiEventsIcon,
-        iconColor: 'gold',
+        color: 'gold',
         description: 'How much you feel like you achieved today',
         tips: {
             1: "I didn't achieve any of my goals for today",
@@ -50,7 +50,7 @@ export const ratingConfig: RatingConfig = {
     focus: {
         label: 'Focus',
         icon: PsychologyIcon,
-        iconColor: 'royalblue',
+        color: 'royalblue',
         description: 'How focused you felt like you were today',
         tips: {
             1: "I couldn't focus at all and wasn't productive",
@@ -63,7 +63,7 @@ export const ratingConfig: RatingConfig = {
     satisfaction: {
         label: 'Satisfaction',
         icon: ThumbsUpDownIcon,
-        iconColor: 'purple',
+        color: 'purple',
         description: 'How satisfied you are with yourself and the day',
         tips: {
             1: "I'm not at all satisfied",
