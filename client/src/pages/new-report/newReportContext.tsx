@@ -6,20 +6,20 @@ import { calculateRating } from '../../commons/util/functions'
 const initialState: NewReport = {
     parameters: {
         sleep: {
-            duration: undefined,
+            duration: 8,
             hadDreams: false,
         },
         hydration: {
-            waterAmount: undefined,
-            softDrinkAmount: undefined,
+            waterAmount: 1.5,
+            softDrinkAmount: 0,
             alcohol: false,
         },
         food: {
             tags: [],
             calories: undefined,
         },
-        sport: { duration: undefined, intensity: undefined },
-        work: { duration: undefined, intensity: undefined },
+        sport: { duration: 0, intensity: 'medium' },
+        work: { duration: 0, intensity: 'medium' },
         interactions: [],
         otherActivities: [],
     },

@@ -16,7 +16,7 @@ const SleepRenderer: EditableFieldProps<RecursivePartial<Sleep>>['renderer'] = (
                 label={
                     <>
                         <b>{'Duration: '}</b>
-                        {value.duration ? formatNumber(1, 1)(value.duration) + 'h' : '-'}
+                        {value.duration !== undefined ? formatNumber(1, 1)(value.duration) + 'h' : '-'}
                     </>
                 }
                 icon={<AccessTimeIcon />}

@@ -16,7 +16,7 @@ const DurationIntensityRenderer: EditableFieldProps<RecursivePartial<DurationInt
                 label={
                     <>
                         <b>{'Duration: '}</b>
-                        {value.duration ? formatNumber(1, 1)(value.duration) + 'h' : '-'}
+                        {value.duration !== undefined ? formatNumber(1, 1)(value.duration) + 'h' : '-'}
                     </>
                 }
                 icon={<AccessTimeIcon />}
