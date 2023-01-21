@@ -1,5 +1,3 @@
-import { Intensity } from '../types/types'
-
 export const sportCategories = ['Cardio', 'Weight lifting', 'Endurance'] as const
 
 export const foodTags = [
@@ -13,4 +11,4 @@ export const foodTags = [
     'Vegetables',
 ] as const
 
-export const intensities: Intensity[] = ['light', 'medium', 'heavy']
+export const intensities = ['light', 'medium', 'heavy'] as const

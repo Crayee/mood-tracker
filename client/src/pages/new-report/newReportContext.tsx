@@ -1,10 +1,28 @@
-import { NewReport, RatingField } from '../../commons/types/types'
-import { createReducerContext } from '../../util/context'
-import { PayloadAction } from '../../util/reducer'
-import { calculateRating } from '../../util/functions'
+import { NewReport, ParametersField, RatingField } from '../../commons/types/types'
+import { createReducerContext } from '../../commons/util/context'
+import { PayloadAction } from '../../commons/util/reducer'
+import { calculateRating } from '../../commons/util/functions'
 
 const initialState: NewReport = {
-    parameters: [],
+    parameters: {
+        sleep: {
+            duration: undefined,
+            hadDreams: true,
+        },
+        hydration: {
+            waterAmount: undefined,
+            softDrinkAmount: undefined,
+            alcohol: false,
+        },
+        food: {
+            tags: [],
+            calories: undefined,
+        },
+        sport: { duration: undefined, intensity: undefined },
+        work: { duration: undefined, intensity: undefined },
+        interactions: [],
+        otherActivities: [],
+    },
     rating: {
         mood: 1,
         achievement: 1,
@@ -17,10 +35,7 @@ const initialState: NewReport = {
 const newReportContext = createReducerContext({
     initialState: initialState,
     reducers: {
-        updateRatingValue: (
-            state,
-            action: PayloadAction<{ field: RatingField; newValue: number }>
-        ) => {
+        updateRatingValue: (state, action: PayloadAction<{ field: RatingField; newValue: number }>) => {
             const newRatingValues = {
                 ...state.rating,
                 [action.payload.field]: action.payload.newValue,
@@ -30,6 +45,15 @@ const newReportContext = createReducerContext({
                 rating: {
                     ...newRatingValues,
                     rating: calculateRating(newRatingValues),
+                },
+            }
+        },
+        updateParameter: (state, action: PayloadAction<{ field: ParametersField; newValue: any }>) => {
+            return {
+                ...state,
+                parameters: {
+                    ...state.parameters,
+                    [action.payload.field]: action.payload.newValue,
                 },
             }
         },

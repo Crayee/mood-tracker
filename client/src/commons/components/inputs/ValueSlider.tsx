@@ -17,7 +17,7 @@ const ValueSlider = (props: ValueSliderProps) => {
         <>
             <Slider
                 value={props.value}
-                valueLabelDisplay="auto"
+                valueLabelDisplay={props.tips ? 'auto' : undefined}
                 valueLabelFormat={(val) => props.tips?.[val] ?? ''}
                 marks
                 onChange={(_, val) => {
@@ -40,7 +40,7 @@ const ValueSlider = (props: ValueSliderProps) => {
                     max,
                     type: 'number',
                 }}
-                sx={{ ml: 1, width: '32px' }}
+                sx={{ width: '32px' }}
             />
         </>
     )

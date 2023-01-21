@@ -1,30 +1,23 @@
-export type Intensity = 'light' | 'medium' | 'heavy'
+import { intensities } from '../config/constants'
+import { RecursivePartialL2 } from './util'
 
+export type Intensity = (typeof intensities)[number]
 export type DurationIntensity = {
     duration: number
-    intensity?: Intensity
+    intensity: Intensity
 }
-
-type Interaction = {
+export type Sleep = {
     duration: number
-    who: string
+    hadDreams: boolean
 }
-
-type Hydration = {
+export type Hydration = {
     waterAmount: number
     softDrinkAmount: number
-    alcoholAmount: number
+    alcohol: boolean
 }
-
-type Food = {
+export type Food = {
     tags: string[]
-    price: number
-}
-
-export type Activities = {
-    sport?: DurationIntensity
-    work?: DurationIntensity
-    interactions?: Interaction[]
+    calories: number
 }
 
 export type Rating = {
@@ -42,12 +35,15 @@ export type DailyReport = {
     date: Date
 
     parameters: {
-        sleep: DurationIntensity
+        sleep: Sleep
         hydration: Hydration
         food: Food
-        activities: Activities
-        others: string[]
+        sport: DurationIntensity
+        work: DurationIntensity
+        interactions?: string[]
+        otherActivities: string[]
     }
     rating: Rating
 }
-export type NewReport = Omit<DailyReport, '_id' | 'ownerId' | 'date'>
+export type ParametersField = keyof DailyReport['parameters']
+export type NewReport = { parameters: RecursivePartialL2<DailyReport['parameters']> } & Pick<DailyReport, 'rating'>
