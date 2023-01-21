@@ -1,5 +1,5 @@
 import { SvgIcon } from '@mui/material'
-import { Rating } from '../types/types'
+import { Rating, RatingField } from '../types/types'
 import StarIcon from '@mui/icons-material/Star'
 import MoodIcon from '@mui/icons-material/Mood'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
@@ -14,7 +14,7 @@ export type RatingFieldConfig = {
     tips?: Record<number, string>
 }
 
-export type RatingConfig = Record<keyof Rating, RatingFieldConfig>
+export type RatingConfig = Record<RatingField, RatingFieldConfig>
 export const ratingConfig: RatingConfig = {
     rating: {
         label: 'Rating',

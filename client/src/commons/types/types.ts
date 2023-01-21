@@ -1,10 +1,11 @@
-export type Entry = {
+export type Report = {
     _id: string
     ownerId: string
     date: Date
     parameters: Parameter[]
     rating: Rating
 }
+export type NewReport = Omit<Report, '_id' | 'ownerId' | 'date'>
 
 type Parameter = {
     __typename: string
@@ -18,3 +19,4 @@ export type Rating = {
     satisfaction?: number
     rating: number
 }
+export type RatingField = keyof Rating
