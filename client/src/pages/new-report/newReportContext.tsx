@@ -7,7 +7,7 @@ const initialState: NewReport = {
     parameters: {
         sleep: {
             duration: undefined,
-            hadDreams: true,
+            hadDreams: false,
         },
         hydration: {
             waterAmount: undefined,

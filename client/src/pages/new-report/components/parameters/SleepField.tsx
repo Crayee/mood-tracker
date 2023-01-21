@@ -6,7 +6,7 @@ import { Dispatch, SetStateAction } from 'react'
 import { Box } from '@mui/material'
 import NumberInput from '../../../../commons/components/inputs/NumberInput'
 import { RecursivePartial } from '../../../../commons/types/util'
-import SwitchInput from '../../../../commons/components/inputs/SwitchInput'
+import CheckboxInput from '../../../../commons/components/inputs/CheckboxInput'
 import SleepRenderer from '../../../../commons/components/fields/renderer/SleepRenderer'
 
 const Editor = (value: RecursivePartial<Sleep>, onChange: Dispatch<SetStateAction<RecursivePartial<Sleep>>>) => {
@@ -23,7 +23,7 @@ const Editor = (value: RecursivePartial<Sleep>, onChange: Dispatch<SetStateActio
     return (
         <Box display="flex" flexDirection={'column'} sx={{ width: '250px', gap: 2 }}>
             <NumberInput label={'Duration'} value={value.duration} onChange={handleChangeDuration} adornment={'h'} />
-            <SwitchInput label={'Had dreams:'} value={value.hadDreams ?? false} onChange={handleChangeHadDreams} />
+            <CheckboxInput label={'Had dreams:'} value={value.hadDreams ?? false} onChange={handleChangeHadDreams} />
         </Box>
     )
 }

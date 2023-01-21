@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel } from '@mui/material'
 import { Dispatch } from 'react'
 
-const SwitchInput = (props: { label: string; value: boolean; onChange: Dispatch<boolean> }) => {
+const CheckboxInput = (props: { label: string; value: boolean; onChange: Dispatch<boolean> }) => {
     return (
         <FormControlLabel
             sx={{ width: '100%' }}
@@ -11,4 +11,4 @@ const SwitchInput = (props: { label: string; value: boolean; onChange: Dispatch<
     )
 }
 
-export default SwitchInput
+export default CheckboxInput

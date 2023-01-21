@@ -4,8 +4,11 @@ import { RecursivePartial } from '../../../types/util'
 import { Box, Chip } from '@mui/material'
 import AccessTimeIcon from '@mui/icons-material/AccessTime'
 import { formatNumber } from '../../../util/formatters'
+import CheckIcon from '@mui/icons-material/Check'
+import CloseIcon from '@mui/icons-material/Close'
 
 const SleepRenderer: EditableFieldProps<RecursivePartial<Sleep>>['renderer'] = (value: RecursivePartial<Sleep>) => {
+    const hadDreams = value.hadDreams ?? false
     return (
         <Box display={'flex'} gap={1}>
             <Chip
@@ -18,7 +21,12 @@ const SleepRenderer: EditableFieldProps<RecursivePartial<Sleep>>['renderer'] = (
                 }
                 icon={<AccessTimeIcon />}
             />
-            {value.hadDreams ? 'true' : 'false'}
+            <Chip
+                size={'small'}
+                label={hadDreams ? 'Had dreams' : 'Had no dreams'}
+                color={hadDreams ? 'success' : 'warning'}
+                icon={hadDreams ? <CheckIcon /> : <CloseIcon />}
+            />
         </Box>
     )
 }
