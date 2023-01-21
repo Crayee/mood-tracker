@@ -6,7 +6,7 @@ const CheckboxInput = (props: { label: string; value: boolean; onChange: Dispatc
         <FormControlLabel
             sx={{ width: '100%' }}
             control={<Checkbox checked={props.value} onChange={(e) => props.onChange(e.target.checked)} />}
-            label="Had Dreams"
+            label={props.label}
         />
     )
 }

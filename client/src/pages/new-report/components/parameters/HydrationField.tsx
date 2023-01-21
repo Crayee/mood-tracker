@@ -34,15 +34,15 @@ const Editor = (
                 label={'Amount water'}
                 value={value.waterAmount}
                 onChange={handleChangeWaterAmount}
-                adornment={'h'}
+                adornment={'L'}
             />
             <NumberInput
                 label={'Amount soft drinks'}
                 value={value.softDrinkAmount}
                 onChange={handleChangeSoftDrinkAmount}
-                adornment={'h'}
+                adornment={'L'}
             />
-            <CheckboxInput label={'Had alcohol:'} value={value.alcohol ?? false} onChange={handleChangeHadAlcohol} />
+            <CheckboxInput label={'Had alcohol'} value={value.alcohol ?? false} onChange={handleChangeHadAlcohol} />
         </Box>
     )
 }

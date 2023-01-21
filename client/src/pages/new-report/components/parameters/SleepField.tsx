@@ -23,7 +23,7 @@ const Editor = (value: RecursivePartial<Sleep>, onChange: Dispatch<SetStateActio
     return (
         <Box display="flex" flexDirection={'column'} sx={{ width: '250px', gap: 2 }}>
             <NumberInput label={'Duration'} value={value.duration} onChange={handleChangeDuration} adornment={'h'} />
-            <CheckboxInput label={'Had dreams:'} value={value.hadDreams ?? false} onChange={handleChangeHadDreams} />
+            <CheckboxInput label={'Had dreams'} value={value.hadDreams ?? false} onChange={handleChangeHadDreams} />
         </Box>
     )
 }
