@@ -21,7 +21,7 @@ const RatingProgress = () => {
             <LinearProgress
                 variant="determinate"
                 value={currentPercentage}
-                color={currentPercentage > 60 ? 'success' : currentPercentage > 20 ? 'warning' : 'error'}
+                color={currentPercentage > 66 ? 'success' : currentPercentage > 33 ? 'warning' : 'error'}
                 sx={{ height: 10, borderRadius: 5 }}
             />
             <Typography fontWeight={600}>{formatNumber(1, 1)(value)} / 5</Typography>

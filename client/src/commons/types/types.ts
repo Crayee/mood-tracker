@@ -25,6 +25,8 @@ export type Rating = {
     achievement?: number
     focus?: number
     satisfaction?: number
+    health?: number
+    energy?: number
     rating: number
 }
 export type RatingField = keyof Rating

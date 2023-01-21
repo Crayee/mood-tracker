@@ -5,6 +5,8 @@ import MoodIcon from '@mui/icons-material/Mood'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown'
 import PsychologyIcon from '@mui/icons-material/Psychology'
+import BoltIcon from '@mui/icons-material/Bolt'
+import LocalHospitalIcon from '@mui/icons-material/LocalHospital'
 
 export type RatingFieldConfig = {
     label: string
@@ -71,6 +73,32 @@ export const ratingConfig: RatingConfig = {
             3: "I'm decently satisfied",
             4: "I'm mostly satisfied",
             5: "I'm very satisfied",
+        },
+    },
+    health: {
+        label: 'Health',
+        icon: LocalHospitalIcon,
+        color: 'red',
+        description: 'How healthy you are and feel today',
+        tips: {
+            1: "I'm very ill",
+            2: "I'm a bit ill",
+            3: 'I have',
+            4: "I'm healthy",
+            5: "I'm very healthy",
+        },
+    },
+    energy: {
+        label: 'Energy',
+        icon: BoltIcon,
+        color: 'orange',
+        description: 'How energized you were during the day',
+        tips: {
+            1: 'I had no energy whatsoever',
+            2: 'I had little energy',
+            3: 'I had average energy levels',
+            4: 'I had plenty of energy',
+            5: 'I had huge amounts of energy',
         },
     },
 }

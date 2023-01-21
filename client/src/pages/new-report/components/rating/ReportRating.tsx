@@ -18,6 +18,8 @@ const ReportRating = () => {
                 <ValueEditor field={'satisfaction'} />
                 <ValueEditor field={'focus'} />
                 <ValueEditor field={'achievement'} />
+                <ValueEditor field={'health'} />
+                <ValueEditor field={'energy'} />
                 <RatingProgress />
             </Box>
         </DefaultPaper>
