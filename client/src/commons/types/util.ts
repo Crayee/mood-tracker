@@ -61,9 +61,9 @@ export type TypeOfPath<T, K, D extends number = 10> = [D] extends [never]
     : never
 
 export type RecursivePartial<T> = {
-    [P in keyof T]?: RecursivePartial<T[P]>
+    [key in keyof T]?: RecursivePartial<T[key]>
 }
 
 export type RecursivePartialL2<T> = {
-    [attr in keyof T]: T[attr] extends object ? RecursivePartial<T[attr]> : T[attr]
+    [key in keyof T]: RecursivePartial<T[key]>
 }
