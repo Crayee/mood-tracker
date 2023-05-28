@@ -7,17 +7,8 @@ export const sportTags = [
     'Downhill',
     'Dancing',
     '',
-] as const
+]
 
-export const foodTags = [
-    'Fast Food',
-    'Meat',
-    'Sweets',
-    'Vegan',
-    'Diary products',
-    'Corn',
-    'Fruit',
-    'Vegetables',
-] as const
+export const foodTags = ['Fast Food', 'Meat', 'Sweets', 'Vegan', 'Diary products', 'Corn', 'Fruit', 'Vegetables']
 
 export const intensities = ['LIGHT', 'MEDIUM', 'HEAVY'] as const
