@@ -23,7 +23,7 @@ function GenericField<T>(props: FieldProps<T>) {
 
                 <span style={{ flex: 1 }} />
                 {editable && (
-                    <IconButton onClick={props.onStartEdit} size={'small'} sx={{}}>
+                    <IconButton onClick={props.onStartEdit} size={'small'}>
                         <EditIcon />
                     </IconButton>
                 )}

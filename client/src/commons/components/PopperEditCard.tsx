@@ -13,7 +13,7 @@ const PopperEditCard = (
 ) => {
     return (
         <Popper open={props.open} anchorEl={props.anchorEl} placement={'bottom-end'}>
-            <ClickAwayListener onClickAway={props.onClickAway} mouseEvent="onMouseDown" touchEvent="onTouchStart">
+            <ClickAwayListener onClickAway={props.onClickAway}>
                 <Card>
                     <CardContent sx={{ p: 1.5, pb: 0 }}>{props.children}</CardContent>
 

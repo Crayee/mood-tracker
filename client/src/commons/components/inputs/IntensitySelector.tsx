@@ -1,20 +1,23 @@
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material'
+import { Autocomplete, TextField } from '@mui/material'
 import { intensities } from '../../config/constants'
 import { Dispatch } from 'react'
 import { Intensity } from '../../types/types'
+import { stopPropagation } from '../../util/stopPropagation'
 
 const IntensitySelector = (props: { onChange: Dispatch<Intensity>; value: Intensity | undefined }) => {
     return (
-        <FormControl fullWidth variant={'filled'} size={'small'}>
-            <InputLabel>Intensity</InputLabel>
-            <Select onChange={(e) => props.onChange(e.target.value as Intensity)} value={props.value ?? ''}>
-                {intensities.map((i, index) => (
-                    <MenuItem key={index} value={i}>
-                        {i.toLowerCase()}
-                    </MenuItem>
-                ))}
-            </Select>
-        </FormControl>
+        <Autocomplete
+            fullWidth
+            size={'small'}
+            onChange={(e, value) => {
+                props.onChange(value as Intensity)
+            }}
+            getOptionLabel={(option) => option.toLowerCase()}
+            value={props.value}
+            options={intensities}
+            onClick={stopPropagation(() => {})}
+            renderInput={(params) => <TextField {...params} size={'small'} variant="filled" label="Intensity" />}
+        />
     )
 }
 
