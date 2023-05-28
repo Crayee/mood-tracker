@@ -15,6 +15,7 @@ const TagsInput = (props: {
             getOptionLabel={(option) => option}
             value={props.tags}
             onChange={props.onChange}
+            disableCloseOnSelect
             renderInput={(params) => <TextField {...params} size={'small'} variant="filled" label="Tags" />}
         />
     )

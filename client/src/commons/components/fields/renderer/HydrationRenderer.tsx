@@ -2,7 +2,7 @@ import { Hydration } from '../../../types/types'
 import { EditableFieldProps } from '../EditableField'
 import { RecursivePartial } from '../../../types/util'
 import { Box, Chip } from '@mui/material'
-import AccessTimeIcon from '@mui/icons-material/AccessTime'
+import WaterDropIcon from '@mui/icons-material/WaterDrop'
 import { formatNumber } from '../../../util/formatters'
 import CheckIcon from '@mui/icons-material/Check'
 import CloseIcon from '@mui/icons-material/Close'
@@ -21,7 +21,7 @@ const SleepRenderer: EditableFieldProps<RecursivePartial<Hydration>>['renderer']
                         {value.waterAmount !== undefined ? formatNumber(1, 1)(value.waterAmount) + 'l' : '-'}
                     </>
                 }
-                icon={<AccessTimeIcon />}
+                icon={<WaterDropIcon />}
             />
             <Chip
                 size={'small'}
@@ -31,7 +31,7 @@ const SleepRenderer: EditableFieldProps<RecursivePartial<Hydration>>['renderer']
                         {value.softDrinkAmount !== undefined ? formatNumber(1, 1)(value.softDrinkAmount) + 'l' : '-'}
                     </>
                 }
-                icon={<AccessTimeIcon />}
+                icon={<WaterDropIcon />}
             />
             <Chip
                 size={'small'}
