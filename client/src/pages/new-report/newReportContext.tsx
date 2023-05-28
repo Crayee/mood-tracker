@@ -22,7 +22,7 @@ const initialState: NewReport = {
             tags: [],
             calories: 2200,
         },
-        sport: { duration: 0, intensity: 'MEDIUM', tags: [] },
+        sport: { duration: 0, intensity: 'MEDIUM', tags: ['test', 'test2'] },
     },
     rating: {
         mood: 1,
