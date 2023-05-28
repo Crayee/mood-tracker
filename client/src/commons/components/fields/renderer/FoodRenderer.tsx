@@ -8,16 +8,18 @@ import TagsList from './TagsList'
 const FoodRenderer: EditableFieldProps<Food>['renderer'] = (value: Food) => {
     return (
         <Box display={'flex'} flexDirection={'column'}>
-            <Chip
-                size={'small'}
-                label={
-                    <>
-                        <b>{'Calories (ca.): '}</b>
-                        {value.calories !== undefined ? formatNumber(0, 0)(value.calories) + 'kcal' : '-'}
-                    </>
-                }
-                icon={<LocalFireDepartmentIcon />}
-            />
+            <Box>
+                <Chip
+                    size={'small'}
+                    label={
+                        <>
+                            <b>{'Calories (ca.): '}</b>
+                            {value.calories !== undefined ? formatNumber(0, 0)(value.calories) + 'kcal' : '-'}
+                        </>
+                    }
+                    icon={<LocalFireDepartmentIcon />}
+                />
+            </Box>
 
             <Typography fontSize={12} fontWeight={600} sx={{ mt: 1 }}>
                 Tags:
