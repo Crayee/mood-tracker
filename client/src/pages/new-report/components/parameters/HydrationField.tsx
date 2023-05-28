@@ -1,5 +1,5 @@
 import EditableField from '../../../../commons/components/fields/EditableField'
-import { Hydration, Sleep } from '../../../../commons/types/types'
+import { Hydration } from '../../../../commons/types/types'
 import { parametersConfig } from '../../../../commons/config/parametersConfig'
 import { useNewReportDispatch, useNewReportSelector } from '../../newReportContext'
 import { Dispatch, SetStateAction } from 'react'
@@ -25,11 +25,11 @@ const Editor = (
     }
     const handleChangeHadAlcohol = (value: boolean) => {
         onChange((old) => {
-            return { ...old, alcohol: value }
+            return { ...old, hadAlcohol: value }
         })
     }
     return (
-        <Box display="flex" flexDirection={'column'} sx={{ width: '250px', gap: 2 }}>
+        <Box display="flex" flexDirection={'column'} sx={{ width: '250px', gap: 1 }}>
             <NumberInput
                 label={'Amount water'}
                 value={value.waterAmount}
@@ -42,20 +42,20 @@ const Editor = (
                 onChange={handleChangeSoftDrinkAmount}
                 adornment={'L'}
             />
-            <CheckboxInput label={'Had alcohol'} value={value.alcohol ?? false} onChange={handleChangeHadAlcohol} />
+            <CheckboxInput label={'Had alcohol'} value={value.hadAlcohol ?? false} onChange={handleChangeHadAlcohol} />
         </Box>
     )
 }
 
 const SleepField = () => {
-    const config = parametersConfig['hydration']
+    const config = parametersConfig.hydration
     const { icon, label } = config
 
-    const value = useNewReportSelector((s) => s.parameters['hydration'])
+    const value = useNewReportSelector((s) => s.parameters.hydration)
 
     const dispatch = useNewReportDispatch()
     const handleSave = (newValue: RecursivePartial<Hydration>) => {
-        dispatch({ type: 'updateParameter', payload: { field: 'hydration', newValue: newValue } })
+        dispatch({ type: 'updateParameter', payload: { field: 'hydration', newValue } })
     }
 
     return (

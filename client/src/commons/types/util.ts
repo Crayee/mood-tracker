@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 type Join<K, P> = K extends string | number
     ? 0 extends 1 & P
         ? never
@@ -27,6 +28,7 @@ type Prev = [never, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17
  * ```
  */
 type Primitive = null | undefined | string | number | boolean | symbol | bigint | String | Date
+// eslint-disable-next-line no-use-before-define
 type DeepSubKeys<T, K extends string> = K extends keyof T ? `${K}.${Path<T[K]>}` : never
 export type Path<T> = object extends T
     ? never
@@ -60,10 +62,17 @@ export type TypeOfPath<T, K, D extends number = 10> = [D] extends [never]
         : never
     : never
 
+/**
+ * Type making every attribute and deeply nested attribute optional
+ */
 export type RecursivePartial<T> = {
     [key in keyof T]?: RecursivePartial<T[key]>
 }
 
+/**
+ * Type making every deeply nested attribute optional,
+ * starting from second Layer
+ */
 export type RecursivePartialL2<T> = {
     [key in keyof T]: RecursivePartial<T[key]>
 }

@@ -1,10 +1,11 @@
 import { Box, IconButton, Paper, Typography } from '@mui/material'
 import { EditableFieldProps } from './EditableField'
 import EditIcon from '@mui/icons-material/Edit'
+import { MouseEvent } from 'react'
 
 export type FieldProps<T> = Pick<EditableFieldProps<T>, 'label' | 'renderer' | 'value' | 'icon'> & {
     editable?: boolean
-    onStartEdit?: () => void
+    onStartEdit?: (event: MouseEvent<HTMLElement>) => void
 }
 function GenericField<T>(props: FieldProps<T>) {
     const { editable = false } = props

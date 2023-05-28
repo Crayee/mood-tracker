@@ -1,4 +1,4 @@
-import { Hydration, Sleep } from '../../../types/types'
+import { Hydration } from '../../../types/types'
 import { EditableFieldProps } from '../EditableField'
 import { RecursivePartial } from '../../../types/util'
 import { Box, Chip } from '@mui/material'
@@ -10,7 +10,7 @@ import CloseIcon from '@mui/icons-material/Close'
 const SleepRenderer: EditableFieldProps<RecursivePartial<Hydration>>['renderer'] = (
     value: RecursivePartial<Hydration>
 ) => {
-    const hadAlcohol = value.alcohol ?? false
+    const hadAlcohol = value.hadAlcohol ?? false
     return (
         <Box display={'flex'} gap={1}>
             <Chip
@@ -27,7 +27,7 @@ const SleepRenderer: EditableFieldProps<RecursivePartial<Hydration>>['renderer']
                 size={'small'}
                 label={
                     <>
-                        <b>{'Soft drinks: '}</b>
+                        <b>{'Soda: '}</b>
                         {value.softDrinkAmount !== undefined ? formatNumber(1, 1)(value.softDrinkAmount) + 'l' : '-'}
                     </>
                 }
@@ -35,7 +35,7 @@ const SleepRenderer: EditableFieldProps<RecursivePartial<Hydration>>['renderer']
             />
             <Chip
                 size={'small'}
-                label={hadAlcohol ? 'Had alcohol' : 'Had no alcohol'}
+                label={hadAlcohol ? 'Alcohol' : 'No alcohol'}
                 color={hadAlcohol ? 'warning' : 'success'}
                 icon={hadAlcohol ? <CheckIcon /> : <CloseIcon />}
             />

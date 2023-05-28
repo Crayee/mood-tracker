@@ -26,7 +26,7 @@ const DurationIntensityRenderer: EditableFieldProps<RecursivePartial<DurationInt
                 label={
                     <>
                         <b>{'Intensity: '}</b>
-                        {value.intensity ?? '-'}
+                        {(value.intensity ?? '-').toLowerCase()}
                     </>
                 }
                 icon={<BoltIcon />}

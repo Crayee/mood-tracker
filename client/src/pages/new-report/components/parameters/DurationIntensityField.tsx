@@ -43,7 +43,7 @@ const DurationIntensityField = (props: DurationIntensityFieldProps) => {
 
     const dispatch = useNewReportDispatch()
     const handleSave = (newValue: RecursivePartial<DurationIntensity>) => {
-        dispatch({ type: 'updateParameter', payload: { field: props.parameter, newValue: newValue } })
+        dispatch({ type: 'updateParameter', payload: { field: props.parameter, newValue } })
     }
 
     return (

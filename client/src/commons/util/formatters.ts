@@ -6,4 +6,4 @@ export const formatNumber =
                 maximumFractionDigits,
                 minimumFractionDigits,
             }) ?? '-'
-        }${unit ? unit : ''}`
+        }${unit || ''}`

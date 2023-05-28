@@ -10,7 +10,7 @@ const IntensitySelector = (props: { onChange: Dispatch<Intensity>; value: Intens
             <Select onChange={(e) => props.onChange(e.target.value as Intensity)} value={props.value ?? ''}>
                 {intensities.map((i, index) => (
                     <MenuItem key={index} value={i}>
-                        {i}
+                        {i.toLowerCase()}
                     </MenuItem>
                 ))}
             </Select>

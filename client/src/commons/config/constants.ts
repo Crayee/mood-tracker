@@ -1,4 +1,13 @@
-export const sportCategories = ['Cardio', 'Weight lifting', 'Endurance'] as const
+export const sportTags = [
+    'Weight lifting / Gym',
+    'Bouldering',
+    'Jogging',
+    'Swimming',
+    'Biking',
+    'Downhill',
+    'Dancing',
+    '',
+] as const
 
 export const foodTags = [
     'Fast Food',
@@ -11,4 +20,4 @@ export const foodTags = [
     'Vegetables',
 ] as const
 
-export const intensities = ['light', 'medium', 'heavy'] as const
+export const intensities = ['LIGHT', 'MEDIUM', 'HEAVY'] as const

@@ -12,16 +12,17 @@ const initialState: NewReport = {
         hydration: {
             waterAmount: 1.5,
             softDrinkAmount: 0,
-            alcohol: false,
+            hadAlcohol: false,
         },
+        work: { duration: 8, intensity: 'MEDIUM' },
+        sex: { hadSex: false, didMasturbate: false },
+
+        // with tags
         food: {
             tags: [],
-            calories: undefined,
+            calories: 2200,
         },
-        sport: { duration: 0, intensity: 'medium' },
-        work: { duration: 0, intensity: 'medium' },
-        interactions: [],
-        otherActivities: [],
+        sport: { duration: 0, intensity: 'MEDIUM', tags: [] },
     },
     rating: {
         mood: 1,
@@ -33,7 +34,7 @@ const initialState: NewReport = {
 }
 
 const newReportContext = createReducerContext({
-    initialState: initialState,
+    initialState,
     reducers: {
         updateRatingValue: (state, action: PayloadAction<{ field: RatingField; newValue: number }>) => {
             const newRatingValues = {

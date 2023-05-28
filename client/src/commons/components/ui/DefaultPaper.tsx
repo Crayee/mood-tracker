@@ -1,8 +1,8 @@
 import { Paper, PaperProps, Typography } from '@mui/material'
-import { PropsWithChildren, ReactNode } from 'react'
+import { PropsWithChildren } from 'react'
 
-const DefaultPaper = (props: PropsWithChildren<PaperProps>) => {
-    const { title, children, ...rest } = props
+const DefaultPaper = (props: PropsWithChildren<PaperProps & { fontSize?: number }>) => {
+    const { title, children, fontSize = 20, ...rest } = props
 
     return (
         <Paper
@@ -12,11 +12,7 @@ const DefaultPaper = (props: PropsWithChildren<PaperProps>) => {
             }}
             {...rest}
         >
-            {title && (
-                <Typography sx={{ mb: 0.8, fontSize: 20, cursor: 'default' }}>
-                    {title}
-                </Typography>
-            )}
+            {title && <Typography sx={{ mb: 0.8, fontSize, cursor: 'default' }}>{title}</Typography>}
             {children}
         </Paper>
     )

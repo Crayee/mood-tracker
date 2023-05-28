@@ -1,7 +1,7 @@
-import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from 'react'
-import CommonDialog from '../ui/CommonDialog'
+import { Dispatch, ReactNode, SetStateAction, useEffect, useState, MouseEvent } from 'react'
 import GenericField from './GenericField'
 import { SvgIcon } from '@mui/material'
+import PopperEditCard from '../PopperEditCard'
 
 export type EditableFieldProps<T> = {
     label: string
@@ -16,6 +16,8 @@ function EditableField<T>(props: EditableFieldProps<T>) {
     const [editMode, setEditMode] = useState(false)
     const [value, setValue] = useState<T>(props.value)
 
+    const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
+
     useEffect(() => {
         setValue(props.value)
     }, [props.value])
@@ -29,8 +31,9 @@ function EditableField<T>(props: EditableFieldProps<T>) {
             props.onSave(value)
         }
     }
-    const handleStartEdit = () => {
+    const handleStartEdit = (event: MouseEvent<HTMLElement>) => {
         setEditMode(true)
+        setAnchorEl(event.currentTarget)
     }
     const handleCancelEdit = () => {
         setEditMode(false)
@@ -47,16 +50,10 @@ function EditableField<T>(props: EditableFieldProps<T>) {
                 icon={props.icon}
                 onStartEdit={handleStartEdit}
             />
-            <CommonDialog
-                title={`Edit ${props.label}`}
-                open={editMode}
-                onClose={handleCancelEdit}
-                buttonLabel={'Save'}
-                onClick={handleSave}
-                maxWidth={'sm'}
-            >
+
+            <PopperEditCard open={editMode} anchorEl={anchorEl} onClickAway={handleCancelEdit} onSave={handleSave}>
                 {props.editor(value, handleOnChange)}
-            </CommonDialog>
+            </PopperEditCard>
         </>
     )
 }

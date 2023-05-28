@@ -21,7 +21,7 @@ const Editor = (value: RecursivePartial<Sleep>, onChange: Dispatch<SetStateActio
         })
     }
     return (
-        <Box display="flex" flexDirection={'column'} sx={{ width: '250px', gap: 2 }}>
+        <Box display="flex" flexDirection={'column'} sx={{ width: '250px', gap: 1 }}>
             <NumberInput label={'Duration'} value={value.duration} onChange={handleChangeDuration} adornment={'h'} />
             <CheckboxInput label={'Had dreams'} value={value.hadDreams ?? false} onChange={handleChangeHadDreams} />
         </Box>
@@ -29,14 +29,14 @@ const Editor = (value: RecursivePartial<Sleep>, onChange: Dispatch<SetStateActio
 }
 
 const SleepField = () => {
-    const config = parametersConfig['sleep']
+    const config = parametersConfig.sleep
     const { icon, label } = config
 
-    const value = useNewReportSelector((s) => s.parameters['sleep'])
+    const value = useNewReportSelector((s) => s.parameters.sleep)
 
     const dispatch = useNewReportDispatch()
     const handleSave = (newValue: RecursivePartial<Sleep>) => {
-        dispatch({ type: 'updateParameter', payload: { field: 'sleep', newValue: newValue } })
+        dispatch({ type: 'updateParameter', payload: { field: 'sleep', newValue } })
     }
 
     return (

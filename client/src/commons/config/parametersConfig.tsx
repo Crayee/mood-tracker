@@ -1,46 +1,49 @@
 import { SvgIcon } from '@mui/material'
 import DirectionsRunIcon from '@mui/icons-material/DirectionsRun'
 import WorkIcon from '@mui/icons-material/Work'
-import PeopleIcon from '@mui/icons-material/People'
 import RestaurantIcon from '@mui/icons-material/Restaurant'
 import LocalDrinkIcon from '@mui/icons-material/LocalDrink'
 import HotelIcon from '@mui/icons-material/Hotel'
-import TagIcon from '@mui/icons-material/Tag'
+import FavoriteIcon from '@mui/icons-material/Favorite'
 import { ParametersField } from '../types/types'
 
 type ParameterConfig = {
     label: string
     icon: typeof SvgIcon
+    hasTags: boolean
 }
 
 export type ParametersConfig = Record<ParametersField, ParameterConfig>
 export const parametersConfig: ParametersConfig = {
-    sport: {
-        label: 'Sport',
-        icon: DirectionsRunIcon,
+    sex: {
+        label: 'Sex',
+        icon: FavoriteIcon,
+        hasTags: false,
     },
     work: {
         label: 'Work',
         icon: WorkIcon,
-    },
-    interactions: {
-        label: 'Interactions',
-        icon: PeopleIcon,
-    },
-    food: {
-        label: 'Food',
-        icon: RestaurantIcon,
+        hasTags: false,
     },
     hydration: {
         label: 'Hydration',
         icon: LocalDrinkIcon,
+        hasTags: false,
     },
     sleep: {
         label: 'Sleep',
         icon: HotelIcon,
+        hasTags: false,
     },
-    otherActivities: {
-        label: 'Other Activities',
-        icon: TagIcon,
+
+    sport: {
+        label: 'Sport',
+        icon: DirectionsRunIcon,
+        hasTags: true,
+    },
+    food: {
+        label: 'Food',
+        icon: RestaurantIcon,
+        hasTags: true,
     },
 }
