@@ -5,6 +5,7 @@ import HydrationField from './HydrationField'
 import { Box, Divider } from '@mui/material'
 import SexField from './SexField'
 import SportField from './SportField'
+import FoodField from './FoodField'
 
 const ParametersPaper = () => {
     return (
@@ -34,6 +35,7 @@ const ParametersPaper = () => {
                 }}
             >
                 <SportField />
+                <FoodField />
             </Box>
         </DefaultPaper>
     )
