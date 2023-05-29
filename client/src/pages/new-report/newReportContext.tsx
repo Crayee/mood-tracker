@@ -26,7 +26,7 @@ const initialState: NewReport = {
     },
     rating: {
         mood: 1,
-        achievement: 1,
+        success: 1,
         focus: 1,
         satisfaction: 1,
         rating: 1,

@@ -15,6 +15,7 @@ const RatingProgress = () => {
                 mt: 1,
                 alignItems: 'center',
                 gap: 2,
+                width: { xs: '100%', md: '50%' },
             }}
         >
             <Typography fontWeight={600}>Gesamt:</Typography>

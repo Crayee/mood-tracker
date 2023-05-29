@@ -9,17 +9,20 @@ const ReportRating = () => {
             <Box
                 sx={{
                     display: 'grid',
-                    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+                    gridTemplateColumns: { xs: 'auto 1fr auto', md: 'auto 1fr auto auto 1fr auto' },
                     rowGap: 1.5,
                     columnGap: 2,
+                    alignItems: 'center',
                 }}
             >
                 <ValueEditor field={'mood'} />
-                <ValueEditor field={'satisfaction'} />
                 <ValueEditor field={'focus'} />
-                <ValueEditor field={'achievement'} />
+                <ValueEditor field={'success'} />
+                <ValueEditor field={'satisfaction'} />
                 <ValueEditor field={'health'} />
                 <ValueEditor field={'energy'} />
+            </Box>
+            <Box display={'flex'} justifyContent={'right'} width={'100%'}>
                 <RatingProgress />
             </Box>
         </DefaultPaper>

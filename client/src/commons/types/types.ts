@@ -28,7 +28,7 @@ export type Sport = DurationIntensity & Tags
 
 export type Rating = {
     mood?: number
-    achievement?: number
+    success?: number
     focus?: number
     satisfaction?: number
     health?: number
