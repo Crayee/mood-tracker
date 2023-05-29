@@ -65,7 +65,7 @@ export const ratingConfig: RatingConfig = {
     satisfaction: {
         label: 'Satisfact.',
         icon: ThumbsUpDownIcon,
-        color: 'purple',
+        color: 'deeppink',
         description: 'How satisfied you are with yourself and the day',
         tips: {
             1: 'Not at all satisfied',
