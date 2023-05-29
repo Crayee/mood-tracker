@@ -5,8 +5,8 @@ import MoodIcon from '@mui/icons-material/Mood'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'
 import ThumbsUpDownIcon from '@mui/icons-material/ThumbsUpDown'
 import PsychologyIcon from '@mui/icons-material/Psychology'
-import BoltIcon from '@mui/icons-material/Bolt'
 import LocalHospitalIcon from '@mui/icons-material/LocalHospital'
+import BatteryCharging60Icon from '@mui/icons-material/BatteryCharging60'
 
 export type RatingFieldConfig = {
     label: string
@@ -26,7 +26,7 @@ export const ratingConfig: RatingConfig = {
     mood: {
         label: 'Mood',
         icon: MoodIcon,
-        color: 'green',
+        color: 'purple',
         description: 'How good your current mood is, at the end of the day',
         tips: {
             1: 'Terrible mood',
@@ -90,8 +90,8 @@ export const ratingConfig: RatingConfig = {
     },
     energy: {
         label: 'Energy',
-        icon: BoltIcon,
-        color: 'orange',
+        icon: BatteryCharging60Icon,
+        color: 'green',
         description: 'How energized you were during the day',
         tips: {
             1: 'No energy',

@@ -6,7 +6,7 @@ import { NewReportContextProvider } from '../newReportContext'
 const NewReportPage = () => {
     return (
         <NewReportContextProvider>
-            <Grid container spacing={{ xs: 1, md: 1.5 }} sx={{ p: { xs: 1, md: 1.5 } }}>
+            <Grid container spacing={{ xs: 0.7, md: 1 }} sx={{ p: { xs: 0.7, md: 1 } }}>
                 <Grid item xs={12}>
                     <Typography fontSize={20}>New Daily Report</Typography>
                 </Grid>

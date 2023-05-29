@@ -8,7 +8,7 @@ const DefaultPaper = (props: PropsWithChildren<PaperProps & { fontSize?: number 
         <Paper
             elevation={4}
             sx={{
-                padding: { xs: '6px 12px 12px 12px', md: '8px 14px 14px 14px' },
+                padding: { xs: '4px 8px 8px 8px', md: '6px 12px 12px 12px' },
             }}
             {...rest}
         >

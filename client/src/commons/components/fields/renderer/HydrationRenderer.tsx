@@ -35,7 +35,7 @@ const SleepRenderer: EditableFieldProps<RecursivePartial<Hydration>>['renderer']
             />
             <Chip
                 size={'small'}
-                label={hadAlcohol ? 'Alcohol' : 'No alcohol'}
+                label={hadAlcohol ? 'Alcohol' : 'No alc.'}
                 color={hadAlcohol ? 'warning' : 'success'}
                 icon={hadAlcohol ? <CheckIcon /> : <CloseIcon />}
             />
