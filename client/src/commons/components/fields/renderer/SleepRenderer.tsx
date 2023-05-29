@@ -10,7 +10,7 @@ import CloseIcon from '@mui/icons-material/Close'
 const SleepRenderer: EditableFieldProps<RecursivePartial<Sleep>>['renderer'] = (value: RecursivePartial<Sleep>) => {
     const hadDreams = value.hadDreams ?? false
     return (
-        <Box display={'flex'} gap={1}>
+        <Box display={'flex'} gap={0.8}>
             <Chip
                 size={'small'}
                 label={

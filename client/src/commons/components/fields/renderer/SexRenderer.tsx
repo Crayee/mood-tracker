@@ -6,7 +6,7 @@ import CloseIcon from '@mui/icons-material/Close'
 
 const SexRenderer: EditableFieldProps<Sex>['renderer'] = (value: Sex) => {
     return (
-        <Box display={'flex'} gap={1}>
+        <Box display={'flex'} gap={0.8}>
             <Chip
                 size={'small'}
                 label={value.hadSex ? 'Had sex' : 'Had no sex'}

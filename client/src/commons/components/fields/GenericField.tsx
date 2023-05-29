@@ -19,9 +19,8 @@ function GenericField<T>(props: FieldProps<T>) {
             </Box>
 
             <Box display={'flex'} alignItems={'center'}>
-                {props.renderer(props.value)}
+                <Box flex={1}>{props.renderer(props.value)}</Box>
 
-                <span style={{ flex: 1 }} />
                 {editable && (
                     <IconButton onClick={props.onStartEdit} size={'small'}>
                         <EditIcon />

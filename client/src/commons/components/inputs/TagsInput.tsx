@@ -7,11 +7,14 @@ const TagsInput = (props: {
     tags: string[]
     onChange: (e: SyntheticEvent, value: string[]) => void
 }) => {
+    const sorted = props.options.sort()
+
     return (
         <Autocomplete
+            fullWidth
             size={'small'}
             multiple
-            options={props.options}
+            options={sorted}
             getOptionLabel={(option) => option}
             value={props.tags}
             onChange={props.onChange}

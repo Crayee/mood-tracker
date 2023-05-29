@@ -10,7 +10,7 @@ const DurationIntensityRenderer: EditableFieldProps<RecursivePartial<DurationInt
     value: RecursivePartial<DurationIntensity>
 ) => {
     return (
-        <Box display={'flex'} gap={1}>
+        <Box display={'flex'} gap={0.8}>
             <Chip
                 size={'small'}
                 label={

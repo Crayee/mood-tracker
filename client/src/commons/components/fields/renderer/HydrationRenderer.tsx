@@ -12,7 +12,7 @@ const SleepRenderer: EditableFieldProps<RecursivePartial<Hydration>>['renderer']
 ) => {
     const hadAlcohol = value.hadAlcohol ?? false
     return (
-        <Box display={'flex'} gap={1}>
+        <Box display={'flex'} gap={0.8}>
             <Chip
                 size={'small'}
                 label={

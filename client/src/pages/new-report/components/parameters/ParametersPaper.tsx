@@ -2,7 +2,7 @@ import DefaultPaper from '../../../../commons/components/ui/DefaultPaper'
 import DurationIntensityField from './DurationIntensityField'
 import SleepField from './SleepField'
 import HydrationField from './HydrationField'
-import { Box, Divider } from '@mui/material'
+import { Divider, Grid } from '@mui/material'
 import SexField from './SexField'
 import SportField from './SportField'
 import FoodField from './FoodField'
@@ -10,33 +10,33 @@ import FoodField from './FoodField'
 const ParametersPaper = () => {
     return (
         <DefaultPaper title={'Parameters'}>
-            <Box
-                sx={{
-                    display: 'grid',
-                    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr 1fr' },
-                    gap: '8px 8px',
-                }}
-            >
-                <SleepField />
-                <DurationIntensityField parameter={'work'} />
-                <HydrationField />
-                <SexField />
-            </Box>
+            <Grid container spacing={{ xs: 0.7, md: 1.2 }}>
+                <Grid item xs={12} md={6} lg={4} xl={3}>
+                    <SleepField />
+                </Grid>
+                <Grid item xs={12} md={6} lg={4} xl={3}>
+                    <DurationIntensityField parameter={'work'} />
+                </Grid>
+                <Grid item xs={12} md={6} lg={4} xl={3}>
+                    <HydrationField />
+                </Grid>
+                <Grid item xs={12} md={6} lg={4} xl={3}>
+                    <SexField />
+                </Grid>
 
-            <Divider textAlign={'left'} sx={{ pt: 2, pb: 1, fontWeight: 500, fontSize: 15 }}>
-                With tags
-            </Divider>
+                <Grid item xs={12}>
+                    <Divider textAlign={'left'} sx={{ mt: 0.5, fontWeight: 500, fontSize: 15 }}>
+                        With tags
+                    </Divider>
+                </Grid>
 
-            <Box
-                sx={{
-                    display: 'grid',
-                    gridTemplateColumns: { xs: '1fr', md: '1fr 1fr', lg: '1fr 1fr 1fr', xl: '1fr 1fr 1fr 1fr' },
-                    gap: '8px 8px',
-                }}
-            >
-                <SportField />
-                <FoodField />
-            </Box>
+                <Grid item xs={12} md={6} lg={4} xl={3}>
+                    <SportField />
+                </Grid>
+                <Grid item xs={12} md={6} lg={4} xl={3}>
+                    <FoodField />
+                </Grid>
+            </Grid>
         </DefaultPaper>
     )
 }
