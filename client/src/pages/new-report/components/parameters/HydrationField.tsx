@@ -20,7 +20,7 @@ const Editor = (
     }
     const handleChangeSoftDrinkAmount = (value: number | undefined) => {
         onChange((old) => {
-            return { ...old, softDrinkAmount: value }
+            return { ...old, sodaAmount: value }
         })
     }
     const handleChangeHadAlcohol = (value: boolean) => {
@@ -38,7 +38,7 @@ const Editor = (
             />
             <NumberInput
                 label={'Amount soft drinks'}
-                value={value.softDrinkAmount}
+                value={value.sodaAmount}
                 onChange={handleChangeSoftDrinkAmount}
                 adornment={'L'}
             />

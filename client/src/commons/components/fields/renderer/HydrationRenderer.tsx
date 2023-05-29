@@ -28,7 +28,7 @@ const SleepRenderer: EditableFieldProps<RecursivePartial<Hydration>>['renderer']
                 label={
                     <>
                         <b>{'Soda: '}</b>
-                        {value.softDrinkAmount !== undefined ? formatNumber(1, 1)(value.softDrinkAmount) + 'l' : '-'}
+                        {value.sodaAmount !== undefined ? formatNumber(1, 1)(value.sodaAmount) + 'l' : '-'}
                     </>
                 }
                 icon={<WaterDropIcon />}

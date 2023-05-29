@@ -11,7 +11,7 @@ const initialState: NewReport = {
         },
         hydration: {
             waterAmount: 1.5,
-            softDrinkAmount: 0,
+            sodaAmount: 0,
             hadAlcohol: false,
         },
         work: { duration: 8, intensity: 'MEDIUM' },

@@ -14,7 +14,7 @@ export type Sleep = {
 }
 export type Hydration = {
     waterAmount: number
-    softDrinkAmount: number
+    sodaAmount: number
     hadAlcohol: boolean
 }
 export type Sex = {
