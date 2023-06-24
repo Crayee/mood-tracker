@@ -56,3 +56,8 @@ export type DailyReport = {
 };
 export type ParametersField = keyof DailyReport["parameters"];
 export type NewReport = Pick<DailyReport, "rating" | "parameters">;
+
+export type User = {
+  _id: string;
+  username: string;
+};
