@@ -1,6 +1,5 @@
 import mongoose, { Model } from "mongoose";
 import { DailyReport } from "../shared/types";
-import { getMongooseConnection } from "../services/getMongooseConnection";
 import { getUserModel } from "./user";
 
 const { SchemaTypes } = mongoose;
@@ -61,8 +60,4 @@ export type DailyReportEntity = Omit<DailyReport, "_id"> & { _id: any };
 export type DailyReportDocument = mongoose.Document & DailyReportEntity;
 
 export const getDailyReportModel = (): Model<DailyReportDocument> =>
-  getMongooseConnection().model<DailyReportDocument>(
-    "DailyReport",
-    SCHEMA,
-    "daily_report"
-  );
+  mongoose.model<DailyReportDocument>("DailyReport", SCHEMA, "daily_report");

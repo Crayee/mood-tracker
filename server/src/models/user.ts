@@ -1,6 +1,5 @@
 import mongoose, { Model } from "mongoose";
 import { User } from "../shared/types";
-import { getMongooseConnection } from "../services/getMongooseConnection";
 
 const { SchemaTypes } = mongoose;
 const { String } = SchemaTypes;
@@ -13,4 +12,4 @@ export type UserEntity = Omit<User, "_id"> & { _id: any };
 export type UserDocument = mongoose.Document & UserEntity;
 
 export const getUserModel = (): Model<UserDocument> =>
-  getMongooseConnection().model<UserDocument>("User", SCHEMA, "user");
+  mongoose.model<UserDocument>("User", SCHEMA, "user");

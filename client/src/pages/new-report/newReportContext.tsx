@@ -29,6 +29,8 @@ const initialState: NewReport = {
         success: 1,
         focus: 1,
         satisfaction: 1,
+        energy: 1,
+        health: 1,
         rating: 1,
     },
 }
