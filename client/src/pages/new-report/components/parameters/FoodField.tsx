@@ -1,12 +1,12 @@
 import EditableField from '../../../../commons/components/fields/EditableField'
-import { Food } from '../../../../commons/types/types'
+import { Food } from '@shared/types'
 import { parametersConfig } from '../../../../commons/config/parametersConfig'
 import { useNewReportDispatch, useNewReportSelector } from '../../newReportContext'
 import { Dispatch, SetStateAction } from 'react'
 import { Box } from '@mui/material'
 import NumberInput from '../../../../commons/components/inputs/NumberInput'
 import TagsInput from '../../../../commons/components/inputs/TagsInput'
-import { foodTags } from '../../../../commons/config/constants'
+import { foodTags } from '@shared/constants'
 import FoodRenderer from '../../../../commons/components/fields/renderer/FoodRenderer'
 
 const Editor = (value: Food, onChange: Dispatch<SetStateAction<Food>>) => {

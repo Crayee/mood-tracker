@@ -1,4 +1,4 @@
-import { DurationIntensity } from '../../../types/types'
+import { DurationIntensity } from '@shared/types'
 import { EditableFieldProps } from '../EditableField'
 import { RecursivePartial } from '../../../types/util'
 import { Box, Chip } from '@mui/material'

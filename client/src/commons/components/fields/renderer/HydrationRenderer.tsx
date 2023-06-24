@@ -1,4 +1,4 @@
-import { Hydration } from '../../../types/types'
+import { Hydration } from '@shared/types'
 import { EditableFieldProps } from '../EditableField'
 import { RecursivePartial } from '../../../types/util'
 import { Box, Chip } from '@mui/material'

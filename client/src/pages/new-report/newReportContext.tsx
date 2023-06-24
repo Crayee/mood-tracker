@@ -1,4 +1,4 @@
-import { NewReport, ParametersField, RatingField } from '../../commons/types/types'
+import { NewReport, ParametersField, RatingField } from '@shared/types'
 import { createReducerContext } from '../../commons/util/context'
 import { PayloadAction } from '../../commons/util/reducer'
 import { calculateRating } from '../../commons/util/functions'

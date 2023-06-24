@@ -1,4 +1,4 @@
-import { Food } from '../../../types/types'
+import { Food } from '@shared/types'
 import { EditableFieldProps } from '../EditableField'
 import { Box, Chip, Typography } from '@mui/material'
 import LocalFireDepartmentIcon from '@mui/icons-material/LocalFireDepartment'

@@ -1,5 +1,5 @@
 import { SvgIcon } from '@mui/material'
-import { RatingField } from '../types/types'
+import { RatingField } from '@shared/types'
 import StarIcon from '@mui/icons-material/Star'
 import MoodIcon from '@mui/icons-material/Mood'
 import EmojiEventsIcon from '@mui/icons-material/EmojiEvents'

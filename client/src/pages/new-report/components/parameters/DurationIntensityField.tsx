@@ -1,5 +1,5 @@
 import EditableField from '../../../../commons/components/fields/EditableField'
-import { DurationIntensity, Intensity } from '../../../../commons/types/types'
+import { DurationIntensity, Intensity } from '@shared/types'
 import { parametersConfig } from '../../../../commons/config/parametersConfig'
 import { useNewReportDispatch, useNewReportSelector } from '../../newReportContext'
 import { Dispatch, SetStateAction } from 'react'

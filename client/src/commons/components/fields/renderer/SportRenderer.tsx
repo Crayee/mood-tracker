@@ -1,4 +1,4 @@
-import { Sport } from '../../../types/types'
+import { Sport } from '@shared/types'
 import { EditableFieldProps } from '../EditableField'
 import DurationIntensityRenderer from './DurationIntensityRenderer'
 import TagsList from './TagsList'

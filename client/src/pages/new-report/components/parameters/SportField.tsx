@@ -1,5 +1,5 @@
 import EditableField from '../../../../commons/components/fields/EditableField'
-import { Intensity, Sport } from '../../../../commons/types/types'
+import { Intensity, Sport } from '@shared/types'
 import { parametersConfig } from '../../../../commons/config/parametersConfig'
 import { useNewReportDispatch, useNewReportSelector } from '../../newReportContext'
 import { Dispatch, SetStateAction } from 'react'
@@ -8,7 +8,7 @@ import NumberInput from '../../../../commons/components/inputs/NumberInput'
 import IntensitySelector from '../../../../commons/components/inputs/IntensitySelector'
 import SportRenderer from '../../../../commons/components/fields/renderer/SportRenderer'
 import TagsInput from '../../../../commons/components/inputs/TagsInput'
-import { sportTags } from '../../../../commons/config/constants'
+import { sportTags } from '@shared/constants'
 
 const Editor = (value: Sport, onChange: Dispatch<SetStateAction<Sport>>) => {
     const handleChangeDuration = (value: number) => {

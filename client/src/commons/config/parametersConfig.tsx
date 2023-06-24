@@ -5,7 +5,7 @@ import RestaurantIcon from '@mui/icons-material/Restaurant'
 import LocalDrinkIcon from '@mui/icons-material/LocalDrink'
 import HotelIcon from '@mui/icons-material/Hotel'
 import FavoriteIcon from '@mui/icons-material/Favorite'
-import { ParametersField } from '../types/types'
+import { ParametersField } from '@shared/types'
 
 type ParameterConfig = {
     label: string

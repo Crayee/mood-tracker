@@ -1,5 +1,5 @@
 import EditableField from '../../../../commons/components/fields/EditableField'
-import { Hydration } from '../../../../commons/types/types'
+import { Hydration } from '@shared/types'
 import { parametersConfig } from '../../../../commons/config/parametersConfig'
 import { useNewReportDispatch, useNewReportSelector } from '../../newReportContext'
 import { Dispatch, SetStateAction } from 'react'

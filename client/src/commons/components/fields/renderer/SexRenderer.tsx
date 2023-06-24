@@ -1,4 +1,4 @@
-import { Sex } from '../../../types/types'
+import { Sex } from '@shared/types'
 import { EditableFieldProps } from '../EditableField'
 import { Box, Chip } from '@mui/material'
 import CheckIcon from '@mui/icons-material/Check'

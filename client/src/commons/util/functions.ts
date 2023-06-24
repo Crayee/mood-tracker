@@ -1,4 +1,4 @@
-import { Rating } from '../types/types'
+import { Rating } from '@shared/types'
 
 export const inBounds = (value: number | undefined, min: number, max: number) => {
     const val = value ?? 0

@@ -1,7 +1,7 @@
 import { Autocomplete, TextField } from '@mui/material'
-import { intensities } from '../../config/constants'
+import { intensities } from '@shared/constants'
 import { Dispatch } from 'react'
-import { Intensity } from '../../types/types'
+import { Intensity } from '@shared/types'
 import { stopPropagation } from '../../util/stopPropagation'
 
 const IntensitySelector = (props: { onChange: Dispatch<Intensity>; value: Intensity | undefined }) => {

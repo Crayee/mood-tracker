@@ -1,4 +1,4 @@
-import { RatingField } from '../../../../commons/types/types'
+import { RatingField } from '@shared/types'
 import { Box, Tooltip, Typography } from '@mui/material'
 import { ratingConfig, RatingFieldConfig } from '../../../../commons/config/ratingConfig'
 import { useNewReportSelector, useNewReportDispatch } from '../../newReportContext'
