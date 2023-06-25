@@ -55,7 +55,7 @@ export type DailyReport = {
   rating: Rating;
 };
 export type ParametersField = keyof DailyReport["parameters"];
-export type NewReport = Pick<DailyReport, "rating" | "parameters">;
+export type NewReport = Omit<DailyReport, "_id">;
 
 export type User = {
   _id: string;

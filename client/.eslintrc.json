@@ -16,6 +16,7 @@
     "rules": {
         // suppress errors for missing 'import React' in files
         "react/react-in-jsx-scope": "off",
-        "no-undef": "warn"
+        "no-undef": "warn",
+        "no-template-curly-in-string": "off"
     }
 }

@@ -1,17 +1,30 @@
 import express from "express";
-import { DailyReport } from "../shared/types";
 import { getDailyReportModel } from "../models/dailyReport";
 
 const router = express.Router();
 
-// Get all
-router.get("/", async (req, res) => {});
-
 // Get all for user
-router.get("/user/:userId", async (req, res) => {});
+router.get("/user/:userId", async (req, res) => {
+  try {
+    const report = await getDailyReportModel()
+      .find({ ownerId: req.params.userId })
+      .sort({ date: "desc" })
+      .exec();
+    res.status(200).json(report);
+  } catch (err) {
+    res.status(400).json({ message: "Fail" });
+  }
+});
 
 // Get by Id
-router.get("/:id", async (req, res) => {});
+router.get("/:id", async (req, res) => {
+  try {
+    const report = await getDailyReportModel().findById(req.params.id).exec();
+    res.status(200).json(report);
+  } catch (err) {
+    res.status(400).json({ message: "Fail" });
+  }
+});
 
 // Create
 router.post("/", async (req, res) => {
@@ -25,9 +38,26 @@ router.post("/", async (req, res) => {
 });
 
 // Delete
-router.delete("/:id", async (req, res) => {});
+router.delete("/:id", async (req, res) => {
+  try {
+    const report = await getDailyReportModel().findByIdAndDelete(req.params.id);
+    res.status(200).json(report);
+  } catch (err) {
+    res.status(400).json({ message: "Fail" });
+  }
+});
 
 // Update
-router.put("/:id", async (req, res) => {});
+router.put("/:id", async (req, res) => {
+  try {
+    const report = await getDailyReportModel().findByIdAndUpdate(
+      req.params.id,
+      { ...req.body }
+    );
+    res.status(200).json(report);
+  } catch (err) {
+    res.status(400).json({ message: "Fail" });
+  }
+});
 
 export default router;
