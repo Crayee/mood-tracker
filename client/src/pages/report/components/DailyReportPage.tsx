@@ -19,23 +19,23 @@ const DailyReportPage = () => {
         }
     }, [report])
 
-    return (
-        report && (
-            <Grid container spacing={{ xs: 0.7, md: 1 }} sx={{ p: { xs: 0.7, md: 1 } }}>
-                <Grid item xs={12}>
-                    <Typography fontSize={20}>Daily Report</Typography>
-                </Grid>
-                <Grid item xs={12}>
-                    <ParametersPaper />
-                </Grid>
-                <Grid item xs={12}>
-                    <ReportRating />
-                </Grid>
-                <Grid item xs={12} display={'flex'} justifyContent={'right'} gap={1}>
-                    <SaveDailyReport />
-                </Grid>
+    return report ? (
+        <Grid container spacing={{ xs: 0.7, md: 1 }} sx={{ p: { xs: 0.7, md: 1 } }}>
+            <Grid item xs={12}>
+                <Typography fontSize={20}>Daily Report</Typography>
             </Grid>
-        )
+            <Grid item xs={12}>
+                <ParametersPaper />
+            </Grid>
+            <Grid item xs={12}>
+                <ReportRating />
+            </Grid>
+            <Grid item xs={12} display={'flex'} justifyContent={'right'} gap={1}>
+                <SaveDailyReport />
+            </Grid>
+        </Grid>
+    ) : (
+        <>Loading...</>
     )
 }
 
