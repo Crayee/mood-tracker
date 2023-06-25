@@ -13,7 +13,7 @@ const SaveDailyReport = () => {
         if (id) update({ _id: id, ...report })
     }
 
-    return <CommonButton label={'Save'} onClick={handleSubmit} endIcon={<SaveIcon />} />
+    return <CommonButton label={'Save'} onClick={handleSubmit} endIcon={<SaveIcon />} size={'medium'} />
 }
 
 export default SaveDailyReport

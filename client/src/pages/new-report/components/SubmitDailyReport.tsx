@@ -11,7 +11,7 @@ const SubmitDailyReport = () => {
         create(newReport)
     }
 
-    return <CommonButton label={'Create'} onClick={handleSubmit} endIcon={<SendIcon />} />
+    return <CommonButton label={'Create'} onClick={handleSubmit} endIcon={<SendIcon />} size={'medium'} />
 }
 
 export default SubmitDailyReport
