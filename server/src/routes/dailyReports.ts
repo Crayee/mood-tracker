@@ -1,63 +1,61 @@
-import express from "express";
 import { getDailyReportModel } from "../models/dailyReport";
+import { FastifyInstance, FastifyRequest } from "fastify";
+import { DailyReport, NewReport } from "../shared/types";
 
-const router = express.Router();
+type RequestWithId = FastifyRequest<{
+  Params: { id: string };
+}>;
 
-// Get all for user
-router.get("/user/:userId", async (req, res) => {
-  try {
-    const report = await getDailyReportModel()
-      .find({ ownerId: req.params.userId })
+export default async function dailyReports(fastify: FastifyInstance) {
+  // Get all for user
+  fastify.get("/user/:id", async (req: RequestWithId) => {
+    const { id: userId } = req.params;
+    return await getDailyReportModel()
+      .find({ ownerId: userId })
       .sort({ date: "desc" })
       .exec();
-    res.status(200).json(report);
-  } catch (err) {
-    res.status(400).json({ message: "Fail" });
-  }
-});
+  });
 
-// Get by Id
-router.get("/:id", async (req, res) => {
-  try {
-    const report = await getDailyReportModel().findById(req.params.id).exec();
-    res.status(200).json(report);
-  } catch (err) {
-    res.status(400).json({ message: "Fail" });
-  }
-});
+  // Get by Id
+  fastify.get("/:id", async (req: RequestWithId) => {
+    const { id } = req.params;
+    return await getDailyReportModel().findById(id).exec();
+  });
 
-// Create
-router.post("/", async (req, res) => {
-  const report = new (getDailyReportModel())({ ...req.body });
-  try {
-    const newReport = await report.save();
-    res.status(201).json(newReport);
-  } catch (err) {
-    res.status(400).json({ message: "Fail" });
-  }
-});
+  // Create
+  fastify.post(
+    "/",
+    async (
+      req: FastifyRequest<{
+        Body: NewReport;
+      }>,
+      reply
+    ) => {
+      const report = new (getDailyReportModel())({ ...req.body });
+      const newReport = await report.save();
+      return reply.status(201).send(newReport);
+    }
+  );
 
-// Delete
-router.delete("/:id", async (req, res) => {
-  try {
-    const report = await getDailyReportModel().findByIdAndDelete(req.params.id);
-    res.status(200).json(report);
-  } catch (err) {
-    res.status(400).json({ message: "Fail" });
-  }
-});
+  // Delete
+  fastify.delete("/:id", async (req: RequestWithId) => {
+    const { id } = req.params;
+    return await getDailyReportModel().findByIdAndDelete(id).exec();
+  });
 
-// Update
-router.put("/:id", async (req, res) => {
-  try {
-    const report = await getDailyReportModel().findByIdAndUpdate(
-      req.params.id,
-      { ...req.body }
-    );
-    res.status(200).json(report);
-  } catch (err) {
-    res.status(400).json({ message: "Fail" });
-  }
-});
-
-export default router;
+  // Update
+  fastify.put(
+    "/:id",
+    async (
+      req: FastifyRequest<{
+        Params: { id: string };
+        Body: DailyReport;
+      }>
+    ) => {
+      const { id } = req.params;
+      return await getDailyReportModel()
+        .findByIdAndUpdate(id, { ...req.body })
+        .exec();
+    }
+  );
+}

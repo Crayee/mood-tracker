@@ -1,24 +1,28 @@
-import express, { Express } from "express";
+import Fastify from "fastify";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import cors from "cors";
+import cors from "@fastify/cors";
 import dailyReports from "./src/routes/dailyReports";
 
 dotenv.config();
 
-const app: Express = express();
-const port = process.env.PORT;
+const fastify = Fastify({
+  logger: true,
+});
+fastify.register(cors);
 
 mongoose
   // @ts-ignore
   .connect(process.env.MONGO_URI)
-  .catch((err) => console.log("Failed to connect to MongoDB", err));
+  .catch((err) => fastify.log.error("Failed to connect to MongoDB", err));
 
-app.use(cors());
-app.use(express.json());
+fastify.register(dailyReports, { prefix: "/api/daily-reports" });
 
-app.use("/api/daily-reports", dailyReports);
-
-app.listen(port, () => {
-  console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
+const port = process.env.PORT;
+fastify.listen({ port: Number(port) }, (err) => {
+  if (err) {
+    fastify.log.error(err);
+    process.exit(1);
+  }
+  fastify.log.info(`Server is listening at port ${port}`);
 });
