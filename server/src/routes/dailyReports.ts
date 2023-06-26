@@ -13,6 +13,8 @@ export default async function dailyReports(fastify: FastifyInstance) {
     return await getDailyReportModel()
       .find({ ownerId: userId })
       .sort({ date: "desc" })
+      //.populate("owner")
+      //.lean()
       .exec();
   });
 
